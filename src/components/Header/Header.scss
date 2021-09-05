@@ -1,0 +1,51 @@
+@import "../styles/main.scss";
+
+.header {
+  align-items: center;
+  background-color: $chocolate-color;
+  border-top: 5px solid $orange-color;
+  color: $beige-color;
+  display: flex;
+  height: 90px;
+  justify-content: space-between;
+  padding: 1rem;
+  .Link {
+    text-decoration: none;
+    color: inherit;
+    h1 {
+      font-size: 3rem;
+    }
+  }
+  ul {
+    align-items: center;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    li {
+      cursor: pointer;
+      font-size: 1.5rem;
+      line-height: 85px;
+      text-align: center;
+      text-transform: uppercase;
+      transition: background-color 0.25s;
+      .Link {
+        display: inline-block;
+        padding: 0 1rem;
+      }
+      /* &:last-child {
+        margin-right: calc(1rem + 5px);
+        width: 75px;
+      } */
+      &:hover {
+        background-color: $red-color;
+        &:last-child {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+.active {
+  background-color: $red-color;
+  font-weight: 600;
+}
