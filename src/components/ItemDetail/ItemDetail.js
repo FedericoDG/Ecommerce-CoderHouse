@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { CartContex } from '../Context/CartProvider';
+import CartContext from '../../Context/Context'
+//import { CartContex } from '../Context/CartProvider';
 import ItemCount from "../ItemCount/ItemCount";
 import Back from "../Back/Back";
 import "./ItemDetail.scss";
@@ -24,7 +25,7 @@ const ItemDetail = ({ product }) => {
   const handleImage = (e) => {
     setImageBig(e.target.src);
   };
-  const { addProduct } = useContext(CartContex);
+  const { addProduct } = useContext(CartContext);
   const onAdd = (count) => {
     setAdd(true);
     addProduct({

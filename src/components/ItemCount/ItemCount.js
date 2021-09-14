@@ -17,14 +17,21 @@ const ItemCount = ({ initial, stock, onAdd }) => {
   };
 
   return (
-    <div className="ItemCount">
-      <div className="quantity">
-        <button onClick={handleDecrement}>-</button><input type="text" inputMode="numeric" readOnly value={count}></input><button onClick={handleIncrement}>+</button>
+    <>
+    {
+      stock > 0 ?
+      <div className="ItemCount">
+        <div className="quantity">
+          <button onClick={handleDecrement}>-</button><input type="text" inputMode="numeric" readOnly value={count}></input><button onClick={handleIncrement}>+</button>
+        </div>
+        <div className="add">
+          <button onClick={() => onAdd(count)}>agregar</button>
+        </div>
       </div>
-      <div className="add">
-        <button onClick={() => onAdd(count)}>agregar</button>
-      </div>
-    </div>
+      :
+      <p>Producto sin stock</p>
+    }
+    </>
   );
 };
 

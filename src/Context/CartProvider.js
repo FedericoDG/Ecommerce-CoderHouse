@@ -1,9 +1,6 @@
-import React, { useState, createContext } from 'react';
+import React, { useState } from 'react';
+import Context from './Context'
 
-//1 - CREAR EL CONTEXTO
-export const CartContex = createContext();
-
-// 2 - CREAR EL COMPONENTE PROVIDER
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
@@ -38,10 +35,9 @@ export const CartProvider = ({ children }) => {
     setCartItems([]);
   };
 
-  // 3 - RETORNAMOS NUESTO CONTEXT CON .PROVIDER
   return (
-    <CartContex.Provider value={{ cartItems, setCartItems, addProduct, deleteProduct, totalCost, totalAmount, resetCantCart }}>
+    <Context.Provider value={{ cartItems, setCartItems, addProduct, deleteProduct, totalCost, totalAmount, resetCantCart }}>
       {children}
-    </CartContex.Provider>
+    </Context.Provider>
   );
 };

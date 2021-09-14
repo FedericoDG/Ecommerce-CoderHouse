@@ -1,10 +1,11 @@
 import { useContext } from 'react';
-import { CartContex } from '../Context/CartProvider';
+import CartContext from '../../Context/Context'
+//import { CartContex } from '../Context/CartProvider';
 import Back from '../Back/Back';
 import "./Cart.scss";
 
 const Cart = () => {
-  const { cartItems, deleteProduct, totalCost, resetCantCart } = useContext(CartContex);
+  const { cartItems, deleteProduct, totalCost, resetCantCart } = useContext(CartContext);
   return (
     <>
       <Back />
