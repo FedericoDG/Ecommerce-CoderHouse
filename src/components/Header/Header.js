@@ -9,7 +9,7 @@ const Header = () => {
       <ul>
         <li><NavLink className="Link" to='/category/importados' activeClassName="active">importados</NavLink></li>
         <li><NavLink className="Link" to='/category/shibumi'>shibumi</NavLink></li>
-        <li><NavLink className="Link" to='/category/mhv'>mhv</NavLink></li>
+        <li><NavLink className="Link" to='/category/mvh'>mvh</NavLink></li>
         <CartWidget />
       </ul>
     </div>
