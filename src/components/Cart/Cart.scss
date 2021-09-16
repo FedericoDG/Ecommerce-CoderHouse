@@ -113,7 +113,7 @@
     .buy {
       display: flex;
       justify-content: flex-end;
-      margin: 1rem;
+      margin: 1rem 0 0;
       padding-bottom: 1rem;
       button {
         background-color: $green-color;
@@ -127,6 +127,43 @@
         text-transform: uppercase;
         width: 263px;
       }
+    }
+    form {
+      padding: 1rem 1rem 0;
+      .fields {
+        border: 1px solid $chocolate-color;
+        h1 {
+          margin-top: 1rem;
+          font-size: 1.5rem;
+        }
+        input {
+          display: inline-block;
+          width: calc((100% / 3 ) - 2rem);
+          margin: 0 1rem 1rem 1rem;
+          height: 2rem;
+          padding: 0.5rem;
+          font-size: 1.25rem;
+          border: none;
+          &:active, &:focus{
+            outline: 2px solid $chocolate-color;
+          }
+        }
+      }
+    }
+  }
+  .order {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f5f5f5;
+    width: 929px;
+    margin: 0 auto;
+    h3 {
+      margin-top: 0.5rem;
+    }
+    span {
+      font-style: italic;
+      background-color: $orangeLight-color;
+      padding: 0.25rem 0.5rem;
     }
   }
 }

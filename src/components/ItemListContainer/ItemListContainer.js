@@ -1,36 +1,38 @@
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
-import { collection, getDocs, query } from 'firebase/firestore';
 import { db } from '../../firebase/firebaseConfig';
 import ItemList from "../ItemList/ItemList.js";
+import Spinner from "../Spinner/Spinner";
+
 import "./ItemListContainer.scss";
 
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const { categoryId } = useParams();
+
   useEffect(() => {
-    const getData = async () => {
-      const productos = await getDocs(query(collection(db, 'products')));
-      let aux = [];
-      productos.docs.forEach(product => {
-        aux.push({...product.data(), id: product.id});
+    const getProducts = async () => {
+      let products = await db.collection('products').get();
+      const docs = [];
+      products.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
       });
       if (categoryId === undefined) {
-        setProducts(aux);
+        setProducts(docs);
       } else {
-        setProducts(aux.filter(item => item.category === categoryId));
+        setProducts(docs.filter(item => item.category === categoryId));
       }
     };
-    getData();
+    getProducts();
   }, [categoryId]);
   return (
     <div className="itemListContainer">
-    {
-      products.length > 0 ?
-      <ItemList products={products} />
-      :
-      <p>Cargando...</p>
-    }
+      {
+        products.length > 0 ?
+          <ItemList products={products} />
+          :
+          <Spinner />
+      }
     </div>
   );
 };

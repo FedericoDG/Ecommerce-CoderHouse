@@ -1,8 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
+
 import "./Header.scss";
 
 const Header = () => {
+
   return (
     <div className="header">
       <Link className="Link" to='/'><h1>Adams Vape</h1></Link>

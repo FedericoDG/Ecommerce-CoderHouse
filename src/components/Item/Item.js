@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import "./Item.scss";
+
 import lupa from "./lupa.svg";
+import "./Item.scss";
 
 const Item = ({ product }) => {
   return (
@@ -16,10 +17,10 @@ const Item = ({ product }) => {
       </div>
       <h3>$ {product.price}</h3>
       {
-        product.new  && <span className="badge nuevo">nuevo</span>
+        product.new && <span className="badge nuevo">nuevo</span>
       }
       {
-        product.discount  && <span className="badge oferta">oferta</span>
+        product.discount && <span className="badge oferta">oferta</span>
       }
       {
         product.stock === 0 && <span className="badge agotado">agotado</span>

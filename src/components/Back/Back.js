@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import "./Back.scss";
+
 import back from "./back.svg";
+import "./Back.scss";
 
 const Back = () => {
   return (

@@ -1,16 +1,20 @@
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import CartContext from '../../Context/Context'
-//import { CartContex } from '../Context/CartProvider';
+import CartContext from '../../Context/Context';
 import ItemCount from "../ItemCount/ItemCount";
 import Back from "../Back/Back";
+
 import "./ItemDetail.scss";
 
 const ItemDetail = ({ product }) => {
+  const { addProduct } = useContext(CartContext);
+
   const [border, setBorder] = useState(1);
   const [add, setAdd] = useState(false);
   const [imageBig, setImageBig] = useState(product.image1);
+
   useEffect(() => { setImageBig(product.image1); }, [product]);
+
   const handleBorder = (e) => {
     if (e.target.nextSibling) {
       if (e.target.nextSibling.nextSibling) {
@@ -22,10 +26,11 @@ const ItemDetail = ({ product }) => {
       setBorder(3);
     }
   };
+
   const handleImage = (e) => {
     setImageBig(e.target.src);
   };
-  const { addProduct } = useContext(CartContext);
+
   const onAdd = (count) => {
     setAdd(true);
     addProduct({
@@ -37,6 +42,7 @@ const ItemDetail = ({ product }) => {
       stock: product.stock,
     });
   };
+
   return (
     <>
       <Back />

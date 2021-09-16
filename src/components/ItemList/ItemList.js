@@ -1,5 +1,6 @@
 
 import Item from "../Item/Item.js";
+
 import "./ItemList.scss"
 
 const ItemList = ({products}) => {
