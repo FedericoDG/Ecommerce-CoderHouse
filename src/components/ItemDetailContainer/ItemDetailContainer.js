@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { db } from '../../firebase/firebaseConfig';
 
 import ItemDetail from "../ItemDetail/ItemDetail";
-import Spinner from "../Spiner/Spinner";
+import Spinner from "../Spinner/Spinner";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
