@@ -1,0 +1,55 @@
+@import "../styles/main.scss";
+.products {
+  padding: 0 1rem 1rem;
+  .row {
+    display: flex;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+    &:last-child {
+      border-bottom: 1px solid $chocolate-color;
+      margin-bottom: 0;
+    }
+    .item {
+      display: flex;
+      width: 419px;
+      .image {
+        img {
+          display: block;
+          height: 75px;
+          width: 75px;
+        }
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 1rem;
+        h2 {
+          font-size: 1.5rem;
+        }
+        span {
+          cursor: pointer;
+          font-size: 1rem;
+          font-weight: 600;
+          text-decoration: underline;
+          text-transform: uppercase;
+        }
+      }
+    }
+    .price {
+      font-size: 1.5rem;
+      text-align: center;
+      width: 170px;
+    }
+    .amount {
+      font-size: 1.5rem;
+      text-align: center;
+      width: 170px;
+    }
+    .subtotal {
+      font-size: 1.5rem;
+      text-align: right;
+      width: 170px;
+    }
+  }
+}

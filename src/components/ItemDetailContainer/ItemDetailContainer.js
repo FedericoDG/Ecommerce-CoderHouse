@@ -3,10 +3,14 @@ import { useParams } from "react-router-dom";
 import { db } from '../../firebase/firebaseConfig';
 
 import ItemDetail from "../ItemDetail/ItemDetail";
+import NotFound from "../NotFound/NotFound";
 import Spinner from "../Spinner/Spinner";
+
+import './ItemDetailContainer.scss';
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(true);
   const { id } = useParams();
 
   useEffect(() => {
@@ -14,24 +18,27 @@ const ItemDetailContainer = () => {
       try {
         const product = (await db.collection('products').doc(id).get()).data();
         setProduct({ ...product, id });
+        setLoading(!loading);
       } catch (error) {
-        console.log(error);
+        console.log('catch');
       }
     };
     getProducts();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (
-    <>
+    <div className="ContainerDetail">
       {
-        product.name ?
-          <div className="ContainerDetail">
-            <ItemDetail product={product} />
-          </div>
-          :
+        loading ?
           <Spinner />
+          :
+          product.name ?
+          <ItemDetail product={product} />
+          :
+          <NotFound title="Producto no encontrado."/>
       }
-    </>
+    </div>
   );
 };
 

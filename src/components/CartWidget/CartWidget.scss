@@ -1,5 +1,5 @@
 @import "../styles/main.scss";
-.cart {
+.cartW {
   position: relative;
   img {
     display: block;
@@ -19,5 +19,6 @@
     text-align: center;
     top: -5px;
     width: 25px;
+    border: 1px solid $beige-color;
   }
 }

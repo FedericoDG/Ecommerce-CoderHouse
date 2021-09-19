@@ -9,7 +9,7 @@ const Item = ({ product }) => {
       <h1>{product.name}</h1>
       <h2>{product.category}</h2>
       <div className="image">
-        <img src={product.image1} alt={product.name} />
+        <img className="thumbs" src={product.image1} alt={product.name} />
         <Link className="overlay" to={`/item/${product.id}`}>
           <img src={lupa} alt="lupa" />
           <span>ver más</span>

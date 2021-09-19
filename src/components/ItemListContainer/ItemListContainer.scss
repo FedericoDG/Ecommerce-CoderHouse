@@ -1,4 +1,5 @@
 .itemListContainer {
+  min-height: calc(100vh - 130px);
   display: flex;
   justify-content: center;
   padding: 2rem;
