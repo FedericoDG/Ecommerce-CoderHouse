@@ -11,26 +11,44 @@ import "./ItemListContainer.scss";
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [title, setTitle] = useState('');
+  const [subtitle, setSubtitle] = useState('');
   const { categoryId } = useParams();
 
   useEffect(() => {
-    const getProducts = async () => {
-      let products = await db.collection('products').get();
-      const docs = [];
-      products.forEach((doc) => {
-        docs.push({ ...doc.data(), id: doc.id });
-      });
-      if (categoryId === undefined) {
-        setProducts(docs);
-      } else {
-        setProducts(docs.filter(item => item.category === categoryId));
+    setLoading(true);
+    setTitle('');
+    setSubtitle('');
+    (async function () {
+      try {
+        let products = await db.collection('products').get();
+        const docs = [];
+        products.forEach((doc) => {
+          docs.push({ ...doc.data(), id: doc.id });
+        });
+        if (categoryId === undefined) {
+          setProducts(docs);
+          setTitle('Todos los líquidos');
+          setSubtitle(`${docs.length} productos`);
+        } else {
+          const filter = docs.filter(item => item.category === categoryId)
+          setProducts(filter);
+          setTitle(`Líquidos ${categoryId}`);
+          setSubtitle(`${filter.length} productos`);
+        }
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
       }
-      setLoading(false);
-    };
-    getProducts();
+    })();
   }, [categoryId]);
 
   return (
+    <>
+      <div className="title">
+        <h1>{title}</h1>
+        <p>{subtitle}</p>
+      </div>
       <div className="itemListContainer">
         {
           loading ?
@@ -42,6 +60,7 @@ const ItemListContainer = () => {
               <NotFound title="Categoría no encontrada" />
         }
       </div>
+    </>
   );
 };
 

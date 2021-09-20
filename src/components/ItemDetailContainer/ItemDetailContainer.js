@@ -14,17 +14,15 @@ const ItemDetailContainer = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    const getProducts = async () => {
+    (async function () {
       try {
         const product = (await db.collection('products').doc(id).get()).data();
         setProduct({ ...product, id });
-        setLoading(!loading);
+        setLoading(false);
       } catch (error) {
-        console.log('catch');
+        console.log(error);
       }
-    };
-    getProducts();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    })();
   }, [id]);
 
   return (
@@ -34,9 +32,9 @@ const ItemDetailContainer = () => {
           <Spinner />
           :
           product.name ?
-          <ItemDetail product={product} />
-          :
-          <NotFound title="Producto no encontrado."/>
+            <ItemDetail product={product} />
+            :
+            <NotFound title="Producto no encontrado." />
       }
     </div>
   );

@@ -7,6 +7,7 @@ import BuyForm from '../BuyForm/BuyForm';
 import CartItem from '../CartItem/CartItem';
 import EmptyCart from '../EmptyCart/EmptyCart';
 import Order from '../Order/Order';
+import Spinner from '../Spinner/Spinner';
 
 import "./Cart.scss";
 
@@ -15,6 +16,7 @@ const Cart = () => {
   const [buyer, setbuyer] = useState({ name: '', phone: '', email: '', repeat_email: '' });
   const [items, setItems] = useState([]);
   const [order, setOrder] = useState('');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const aux = [];
@@ -38,6 +40,7 @@ const Cart = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const date = new Date();
     const object = {
       buyer,
@@ -57,43 +60,51 @@ const Cart = () => {
       }
     }));
     resetCantCart();
+    setLoading(false);
     console.log('Documento escrito en Firestore:', object);
     console.log('ID del documento:', newOrder.id);
   };
 
   return (
     <div className="cart">
-      <Back />
-      <h1>Carrito de compras</h1>
       {
-        cartItems.length > 0
-          ?
-          <div className="container">
-            <div className="head">
-              <div className="product">producto</div>
-              <div className="price">precio</div>
-              <div className="quantity">cantidad</div>
-              <div className="subtotal">subtotal</div>
-            </div>
-            {
-              cartItems.map(product => {
-                return (
-                  <CartItem product={product} deleteProduct={deleteProduct} key={product.id} />
-                );
-              })
-            }
-            <div className="removeAll" onClick={resetCantCart}>Quitar todos los productos</div>
-            <div className="total">
-              <span className="title">Total</span>
-              <span className="price">${(totalCost())}</span>
-            </div>
-            <BuyForm onSubmit={onSubmit} onChange={onChange} buyer={buyer} />
-          </div>
+        loading ?
+          <Spinner />
           :
-          order ?
-            <Order order={order} />
-            :
-            <EmptyCart />
+          <>
+            <Back />
+            <h1>Carrito de compras</h1>
+            {
+              cartItems.length > 0
+                ?
+                <div className="container">
+                  <div className="head">
+                    <div className="product">producto</div>
+                    <div className="price">precio</div>
+                    <div className="quantity">cantidad</div>
+                    <div className="subtotal">subtotal</div>
+                  </div>
+                  {
+                    cartItems.map(product => {
+                      return (
+                        <CartItem product={product} deleteProduct={deleteProduct} key={product.id} />
+                      );
+                    })
+                  }
+                  <div className="removeAll" onClick={resetCantCart}>Quitar todos los productos</div>
+                  <div className="total">
+                    <span className="title">Total</span>
+                    <span className="price">${(totalCost())}</span>
+                  </div>
+                  <BuyForm onSubmit={onSubmit} onChange={onChange} buyer={buyer} />
+                </div>
+                :
+                order ?
+                  <Order order={order} />
+                  :
+                  <EmptyCart />
+            }
+          </>
       }
     </div>
   );

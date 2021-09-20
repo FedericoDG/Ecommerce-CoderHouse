@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="662" height="536.842" viewBox="0 0 662 536.842">
   <g id="Grupo_2" data-name="Grupo 2" transform="translate(-456 -193)">
     <g id="Icon_feather-shopping-cart" data-name="Icon feather-shopping-cart" transform="translate(469.5 206.5)">
-      <path id="Trazado_1" data-name="Trazado 1" d="M60.271,54.135A24.135,24.135,0,1,1,36.135,30,24.135,24.135,0,0,1,60.271,54.135Z" transform="translate(158.447 430.071)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="30"/>
-      <path id="Trazado_2" data-name="Trazado 2" d="M76.771,54.135A24.135,24.135,0,1,1,52.635,30,24.135,24.135,0,0,1,76.771,54.135Z" transform="translate(407.436 430.071)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="30"/>
-      <path id="Trazado_3" data-name="Trazado 3" d="M1.5,1.5H98.041l64.683,323.172a48.271,48.271,0,0,0,48.271,38.858h234.6a48.271,48.271,0,0,0,48.271-38.858l38.617-202.5h-410.3" transform="translate(0 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="30"/>
+      <path id="Trazado_1" data-name="Trazado 1" d="M60.271,54.135A24.135,24.135,0,1,1,36.135,30,24.135,24.135,0,0,1,60.271,54.135Z" transform="translate(158.447 430.071)" fill="none" stroke="#471f13" stroke-linecap="round" stroke-linejoin="round" stroke-width="30"/>
+      <path id="Trazado_2" data-name="Trazado 2" d="M76.771,54.135A24.135,24.135,0,1,1,52.635,30,24.135,24.135,0,0,1,76.771,54.135Z" transform="translate(407.436 430.071)" fill="none" stroke="#471f13" stroke-linecap="round" stroke-linejoin="round" stroke-width="30"/>
+      <path id="Trazado_3" data-name="Trazado 3" d="M1.5,1.5H98.041l64.683,323.172a48.271,48.271,0,0,0,48.271,38.858h234.6a48.271,48.271,0,0,0,48.271-38.858l38.617-202.5h-410.3" transform="translate(0 0)" fill="none" stroke="#471f13" stroke-linecap="round" stroke-linejoin="round" stroke-width="30"/>
     </g>
     <g id="Grupo_1" data-name="Grupo 1" transform="translate(-502 -21)">
       <circle id="Elipse_1" data-name="Elipse 1" cx="116" cy="116" r="116" transform="translate(1388 229)" fill="#fff"/>
-      <path id="Icon_metro-cancel" data-name="Icon metro-cancel" d="M118.571,1.928a116,116,0,1,0,116,116,116,116,0,0,0-116-116Zm0,210.25a94.25,94.25,0,1,1,94.25-94.25,94.25,94.25,0,0,1-94.25,94.25Zm36.25-152.25-36.25,36.25-36.25-36.25-21.75,21.75,36.25,36.25-36.25,36.25,21.75,21.75,36.25-36.25,36.25,36.25,21.75-21.75-36.25-36.25,36.25-36.25Z" transform="translate(1385.429 227.072)"/>
+      <path id="Icon_metro-cancel" data-name="Icon metro-cancel" d="M118.571,1.928a116,116,0,1,0,116,116,116,116,0,0,0-116-116Zm0,210.25a94.25,94.25,0,1,1,94.25-94.25,94.25,94.25,0,0,1-94.25,94.25Zm36.25-152.25-36.25,36.25-36.25-36.25-21.75,21.75,36.25,36.25-36.25,36.25,21.75,21.75,36.25-36.25,36.25,36.25,21.75-21.75-36.25-36.25,36.25-36.25Z" transform="translate(1385.429 227.072)" fill="#471f13"/>
     </g>
   </g>
 </svg>

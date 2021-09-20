@@ -15,7 +15,7 @@ const Item = ({ product }) => {
           <span>ver más</span>
         </Link>
       </div>
-      <h3>$ {product.price}</h3>
+      <h3>$ {product.price}.<span>00</span></h3>
       {
         product.new && <span className="badge nuevo">nuevo</span>
       }

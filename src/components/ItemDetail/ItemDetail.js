@@ -62,6 +62,7 @@ const ItemDetail = ({ product }) => {
               <h1>{product.name}</h1>
               <h2>{product.category}</h2>
               <p>{product.description_long}</p>
+              <p className="price">Precio: $ {product.price}.<span>00</span></p>
             </div>
             {
               !add
