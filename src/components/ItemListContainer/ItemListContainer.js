@@ -28,13 +28,17 @@ const ItemListContainer = () => {
         });
         if (categoryId === undefined) {
           setProducts(docs);
-          setTitle('Todos los líquidos');
-          setSubtitle(`${docs.length} productos`);
+          if (docs.length > 0) {
+            setTitle('Todos los líquidos');
+            setSubtitle(`${docs.length} productos`);
+          }
         } else {
           const filter = docs.filter(item => item.category === categoryId)
           setProducts(filter);
-          setTitle(`Líquidos ${categoryId}`);
-          setSubtitle(`${filter.length} productos`);
+          if (filter.length > 0) {
+            setTitle(`Líquidos ${categoryId}`);
+            setSubtitle(`${filter.length} productos`);
+          }
         }
         setLoading(false);
       } catch (error) {

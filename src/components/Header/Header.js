@@ -10,7 +10,7 @@ const Header = () => {
     <div className="header">
       <Link className="Link" to='/'>
       <img src={logo} alt="logo" />
-        <h1>Adams Vape</h1>
+        <h1>Adam's Vape</h1>
       </Link>
       <ul>
         <li><NavLink className="Link" to='/category/importados' activeClassName="active">importados</NavLink></li>
