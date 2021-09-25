@@ -17,6 +17,8 @@ El usuario puede enviar un pedido ingresando sus datos desde la pantalla de carr
 
 La barra de navegación muestra la cantidad de items que el usuario ha agregado al carrito.
 
+![Demostración](https://nazgul.com.ar/images/demo.gif)
+
 #### Instrucciones de instalación
 
 ```
