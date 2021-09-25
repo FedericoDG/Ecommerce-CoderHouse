@@ -30,13 +30,14 @@ La barra de navegación muestra la cantidad de items que el usuario ha agregado 
 #### Configurar entorno
 
 2. Editar el archivo __.env__ en la carpeta raíz del proyecto y cargar las siguientes propiedades de Firebase en de caso de querer usar credenciales propias:
-
-> REACT_APP_APIKEY=
-> REACT_APP_AUTHDOMAIN=
-> REACT_APP_PREYECTID=
-> REACT_APP_STORAGEBUCKET=
-> REACT_APP_MESSAGINGSENDERID=
-> REACT_APP_APPID=
+```
+REACT_APP_APIKEY=
+REACT_APP_AUTHDOMAIN=
+REACT_APP_PREYECTID=
+REACT_APP_STORAGEBUCKET=
+REACT_APP_MESSAGINGSENDERID=
+REACT_APP_APPID=
+```
 
 #### Documentación de React
 [Documentación de React](https://reactjs.org/)
